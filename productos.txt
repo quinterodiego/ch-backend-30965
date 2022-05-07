@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Telcado Bluetooth",
+    "price": 20000,
+    "thumbnail": "https://http2.mlstatic.com/D_905396-MLA42715899515_072020-O.jpg",
+    "id": 1
+  },
+  {
+    "title": "Telcado Bluetooth",
+    "price": 20000,
+    "thumbnail": "https://http2.mlstatic.com/D_905396-MLA42715899515_072020-O.jpg",
+    "id": 2
+  },
+  {
+    "title": "Telcado Bluetooth",
+    "price": 20000,
+    "thumbnail": "https://http2.mlstatic.com/D_905396-MLA42715899515_072020-O.jpg",
+    "id": 3
+  }
+]
