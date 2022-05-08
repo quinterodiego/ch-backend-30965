@@ -6,10 +6,15 @@ class Container {
         this.path = fileName
     }
 
+    readFile = async ( file ) => {
+        const data = await fs.promises.readFile( file, 'utf-8' )
+        return JSON.parse( data )
+    }
+
     save = async ( product ) => {
         try {
-            const data = await fs.promises.readFile( this.path, 'utf-8' )
-            const dataArray = JSON.parse( data )
+            
+            const dataArray = await this.readFile( this.path )
             const id = dataArray.length + 1
             const newProduct = { ...product, id }
             dataArray.push( newProduct )
@@ -23,8 +28,7 @@ class Container {
 
     getById = async ( id ) => {
         try {
-            const data = await fs.promises.readFile( this.path, 'utf-8' )
-            const dataArray = JSON.parse( data )
+            const dataArray = await this.readFile( this.path )
             const product = dataArray.find(p => p.id == id)
             product ? console.log("Producto encontrado: ", product) : console.log(null)
         } catch (error) {
@@ -34,8 +38,7 @@ class Container {
 
     getAll = async () => {
         try {
-            const data = await fs.promises.readFile( this.path, 'utf-8' )
-            const dataArray = JSON.parse( data )
+            const dataArray = await this.readFile( this.path )
             console.log( "Data: ", dataArray )
         } catch (error) {
             console.error(error)
@@ -44,8 +47,7 @@ class Container {
 
     deleteById = async ( id ) => {
         try {
-            const data = await fs.promises.readFile( this.path, 'utf-8' )
-            const dataArray = JSON.parse( data )
+            const dataArray = await this.readFile( this.path )
             const products = dataArray.filter((p => p.id !== id))
             const newProducts = JSON.stringify( products, null, 2 )
             await fs.promises.writeFile( this.path, newProducts )
@@ -71,8 +73,14 @@ const product = {
     thumbnail: 'https://http2.mlstatic.com/D_905396-MLA42715899515_072020-O.jpg'
 }
 
+// Ejecuciones de Prueba
+
 // c.save( product );
- c.getById( 1);
+
+// c.getById( 1 );
+
 // c.getAll();
-// c.deleteById(2);
+
+// c.deleteById( 2 );
+
 // c.deleteAll();
