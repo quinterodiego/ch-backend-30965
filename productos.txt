@@ -16,5 +16,35 @@
     "price": 7500,
     "thumbnail": "https://http2.mlstatic.com/D_905396-MLA42715899515_072020-O.jpg",
     "id": 3
+  },
+  {
+    "title": "Prueba post",
+    "price": "5000",
+    "thumbnail": "asdasdasd",
+    "id": 4
+  },
+  {
+    "title": "Prueba post",
+    "price": "5000",
+    "thumbnail": "asdasdasd",
+    "id": 5
+  },
+  {
+    "title": "Prueba post",
+    "price": "5000",
+    "thumbnail": "asdasdasd",
+    "id": 6
+  },
+  {
+    "title": "Prueba post",
+    "price": "5000",
+    "thumbnail": "asdasdasd",
+    "id": 7
+  },
+  {
+    "title": "Prueba post",
+    "price": "5000",
+    "thumbnail": "asdasdasd",
+    "id": 8
   }
 ]

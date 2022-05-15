@@ -20,7 +20,7 @@ class Container {
             dataArray.push( newProduct )
             const newProductJSON = JSON.stringify( dataArray, null, 2 )
             await fs.promises.writeFile( this.path, newProductJSON )
-            console.log( "ID asignado: ", id )
+            return id
         } catch (error) {
             console.error(error)
         }
@@ -39,11 +39,7 @@ class Container {
     getAll = async () => {
         try {
             const dataArray = await this.readFile( this.path )
-<<<<<<< HEAD
-            console.log( "Data: ", dataArray )
-=======
             return dataArray
->>>>>>> desafio-clase06
         } catch (error) {
             console.error(error)
         }
@@ -87,10 +83,6 @@ const product = {
 
 // c.deleteById( 2 );
 
-<<<<<<< HEAD
-// c.deleteAll();
-=======
 // c.deleteAll();
 
 module.exports = Container;
->>>>>>> desafio-clase06
