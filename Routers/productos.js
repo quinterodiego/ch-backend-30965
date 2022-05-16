@@ -1,9 +1,5 @@
 const express = require('express')
-const { send } = require('express/lib/response')
 const { Router } = express
-const Container = require('./../Container')
-
-const contenedor = new Container()
 
 let productos = [
     {
@@ -40,9 +36,10 @@ productosRouter.get('/api/productos/:id', async (req, res) => {
 
 productosRouter.post('/api/productos', async (req, res) => {
     const producto = req.body
-    const id = await contenedor.save(producto)
-    const productoGuardado = await contenedor.getById(id)
-    res.send({ "Nuevo Producto": productoGuardado })
+    const id = productos.length + 1
+    productoNuevo = { id: id, ...producto }
+    productos.push(productoNuevo)
+    res.send({ "Nuevo Producto": productoNuevo })
 })
 
 productosRouter.put('/api/productos/:id', async (req, res) => {
@@ -57,6 +54,13 @@ productosRouter.put('/api/productos/:id', async (req, res) => {
 
         res.json(productos[productoIndex])
     }
+})
+
+productosRouter.delete('/api/productos/:id', async (req, res) => {
+    const id = Number(req.params.id)
+    const producto = productos.find(p => p.id === id)
+    const productosDelete = productos.filter(p => p.id !== id)
+    producto ? res.send({ "Productos": productosDelete }) : res.send({ error: "Producto no encontrado" })
 })
 
 module.exports = productosRouter
