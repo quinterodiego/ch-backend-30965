@@ -65,24 +65,4 @@ class Container {
     }
 }
 
-const c = new Container();
-
-const product = {
-    title: "Telcado Bluetooth",
-    price: 20000,
-    thumbnail: 'https://http2.mlstatic.com/D_905396-MLA42715899515_072020-O.jpg'
-}
-
-// Ejecuciones de Prueba
-
-// c.save( product );
-
-// c.getById( 1 );
-
-// c.getAll();
-
-// c.deleteById( 2 );
-
-// c.deleteAll();
-
 module.exports = Container;
