@@ -1,0 +1,10 @@
+{{> header }}
+
+<h3>Jugadores de Boca Juniors</h3>
+<ul>
+    {{#each jugadores}}
+        <li>{{ this.numero }} - {{this.nombre}} - {{ this.puesto }} </li>
+    {{/each}}
+</ul>
+
+{{> footer }}
