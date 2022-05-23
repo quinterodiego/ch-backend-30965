@@ -2,15 +2,16 @@
   "name": "ch-backend-30965",
   "version": "1.0.0",
   "description": "",
-  "main": "Container.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx nodemon Server.js"
+    "dev": "nodemon main.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/quinterodiego/ch-backend-30965.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/quinterodiego/ch-backend-30965#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "pug": "^3.0.2"
   }
 }

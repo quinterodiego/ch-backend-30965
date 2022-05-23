@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('./partials/head') %>
+</head>
+<body>
+    <div class="container">
+        <%- include('./partials/header') %>
+    </div>
+
+    <main>
+        <div class="jumbotron">
+            <h3>Alumnos Comisión <%= comision %></h3>
+            <ul>
+                <% alumnos.forEach(alumno => { %>
+                    <li><%= alumno.nombre %> <%= alumno.apellido %></li>
+                <% }) %>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
