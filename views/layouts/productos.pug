@@ -1,0 +1,19 @@
+div(class="text-center")
+    h3(class="mt-5") Listado de productos
+    table(class="table table-dark mt-5")
+        thead
+            tr
+                th(scope="col") #
+                th(scope="col") Titulo
+                th(scope="col") Precio
+                th(scope="col") Imagen
+        tbody
+            each p in productos
+                tr
+                    th(scope="row")= p.id
+                    td= p.title
+                    td= p.price
+                    td
+                        img(src=p.thumbnail, width="75")
+            else
+                p No se encontraron datos

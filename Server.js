@@ -6,22 +6,13 @@ const app = express()
 
 const contenedor = new Container();
 
-app.engine('hbs', engine({
-    extname: 'hbs',
-    defaultLayout: `${__dirname}/views/index`,
-    layoutsDir: `${__dirname}/views/layouts`,
-    partialsDir: `${__dirname}/views/partials`,
-}))
-
 app.set('views', './views')
-app.set('view engine', 'hbs')
+app.set('view engine', 'pug')
 app.use(express.json())
 app.use(express.urlencoded({ extended: 'true' }))
-//app.use(express.static('public'))
-//app.use('/', productosRouter)
 
 app.get('/', (req, res) => {
-    return res.render('layouts/form')
+    return res.render('index')
 })
 
 app.get('/productos',async (req, res) => {
@@ -30,7 +21,7 @@ app.get('/productos',async (req, res) => {
         productos
     }
 
-    return res.render('layouts/productos', data)
+    return res.render('prod', data)
 })
 
 app.post('/productos', async (req, res) => {
