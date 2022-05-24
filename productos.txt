@@ -34,5 +34,11 @@
     "price": "11600",
     "thumbnail": "https://resource.logitech.com/content/dam/logitech/en/products/keyboards/mx-keys-mini/gallery/deu/mx-keys-mini-top-graphite-deu.png",
     "id": 6
+  },
+  {
+    "title": "Camara Web",
+    "price": "7650",
+    "thumbnail": "https://mexx-img-2019.s3.amazonaws.com/35036_2.jpeg",
+    "id": 7
   }
 ]
