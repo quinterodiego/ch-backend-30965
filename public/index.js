@@ -14,10 +14,8 @@ socket.on('mensajeServidor', (data) => {
 
 socket.on('mensajes', data => {
     const messages = data
-        .map(message => {
-        `SocketId: ${message.socketID} --> Mensaje: ${message.mensaje}`
-    })
+        .map(message => `SocketId: ${message.socketID} --> Mensaje: ${message.mensaje}`)
         .join('<br>')
 
-    document.querySelector('p').innerHTML += messages
+    document.querySelector('p').innerHTML = messages
 })

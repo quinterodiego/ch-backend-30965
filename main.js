@@ -18,8 +18,13 @@ io.on('connection', (socket) => {
     console.log("Nuevo cliente conectado!")
 
     socket.emit('mensajes', mensajes)
+
     socket.on('mensajeCliente', (data) => {
         mensajes.push({ socketID: socket.id,  mensaje: data })
         io.sockets.emit('mensajeServidor', { socketID: socket.id,  mensaje: data })
+    })
+
+    socket.on('disconnect', (reason) => {
+        console.log(`Socket: ${socket.id} se ha desconetado - Razón: ${reason}`)
     })
 })
