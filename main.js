@@ -60,6 +60,18 @@ io.on('connection', socket => {
         messages.push(message)
 
         socket.emit('myMessage', message)
-        socket.emit('message', message)
+        socket.broadcast.emit('message', message)
+    })
+
+    socket.on('disconnect', reason => {
+        const user = users.find(user => user.id === socket.id)
+
+        users = users.filter(user => user.id !== socket.id)
+
+        if(user) {
+            socket.broadcast.emit('notification', `${user.username} se ha desconectado`)
+        }
+
+        io.sockets.emit('users', users)
     })
 })
