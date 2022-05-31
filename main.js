@@ -14,6 +14,7 @@ app.set('views', './views')
 app.set('view engine', 'ejs')
 
 let users = []
+const messages = []
 
 app.get('/login', (req, res) => {
     res.render('login')
@@ -43,7 +44,22 @@ io.on('connection', socket => {
         })
 
         socket.emit('notification', `Bienvenido ${username}`)
-
         socket.broadcast.emit('notification', `${username} se ha unido al chat`)
+        io.sockets.emit('users', users)
+    })
+
+    socket.on('messageInput', data => {
+        const now = new Date()
+        const user = users.find(user => user.id === socket.id)
+        const message = {
+            text: data,
+            time: `${now.getHours()}:${now.getMinutes()}`,
+            user
+        }
+
+        messages.push(message)
+
+        socket.emit('myMessage', message)
+        socket.emit('message', message)
     })
 })
