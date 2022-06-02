@@ -9,17 +9,7 @@
                 <th scope="col">Imagen</th>
             </tr>
         </thead>
-        <tbody>
-            <% productos.forEach(p => { %>
-            <tr>
-                <th scope="row"><%= p.id %></th>
-                <td><%= p.title %></td>
-                <td><%= p.price %></td>
-                <td>
-                    <img src="<%=p.thumbnail%>" width="75"/>
-                </td>
-            </tr>
-            <% }) %>
+        <tbody id="productos">
         </tbody>
     </table>
 </div>
