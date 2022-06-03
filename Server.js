@@ -15,8 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: 'true' }))
 app.use(express.static('./public'))
 
-let users = []
-const messages = []
+let messages = []
 
 app.get('/', (req, res) => {
     return res.render('index')
@@ -60,5 +59,13 @@ io.on('connection', async socket => {
         await contenedor.save(producto)
         const productos = await contenedor.getAll();
         io.sockets.emit('productos', productos);
+    })
+
+    socket.emit('messages', messages)
+
+    socket.on('newMessage', data => {
+        messages.push(data)
+        console.log(messages)
+        socket.emit('messages', messages)
     })
 })

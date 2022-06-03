@@ -1,15 +1,10 @@
-<div class="text-center w-50 p-5 m-auto">
+<div class="w-50 p-5 m-auto">
     <h3 class="mt-5">Centro de Mensajes</h3>
-    <form id="formInputMessage" class="d-flex flex-column">
-        <div>
-            <input type="text" class="form-control w-100" id="inputMessage" placeholder="Ingrese su email">
-        </div>
-        <div class="div">
-            <input type="text" class="form-control d-inline w-75" id="inputMessage" placeholder="Ingrese su mensaje">
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </div>
-    </form>
-    <div class="mensajes">
-
+    <input type="text" class="form-control w-75 mt-3" id="inputEmail" placeholder="Ingrese su email">
+    <hr class="w-75">
+    <div id="mensajes">
     </div>
+    <hr class="w-75">
+    <input type="text" class="form-control w-75 mt-3" id="inputMessage" placeholder="Ingrese su mensaje">
+    <button class="btn btn-primary mt-3" id="sendMessage">Enviar</button>
 </div>
