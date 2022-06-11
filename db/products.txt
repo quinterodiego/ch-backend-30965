@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "titlle": "Producto de prueba",
+    "price": 3000,
+    "thumbnail": "asdasdasd",
+    "id": 1
+  },
+  {
+    "id": 3,
+    "titlle": "Producto de prueba2",
+    "price": 11111,
+    "thumbnail": "asdasdasd"
+  }
+]

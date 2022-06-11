@@ -1,5 +1,5 @@
 const fs = require( 'fs' )
-const fileName = './../db/productos.txt'
+const fileName = './db/products.txt'
 
 class Container {
     constructor() {
@@ -62,6 +62,17 @@ class Container {
             console.error(error)
         }
     }
+
+    async updateById (id, product) {
+        const products = await this.getAll();
+        product.id = id
+        const productsFilter = products.filter(p => p.id !== id)
+        const newProducts = [...productsFilter, product]
+        const productsString = JSON.stringify(newProducts, null, 2);
+        await fs.promises.writeFile(this.path, productsString, 'utf-8');
+
+        return productsString;
+    }
 }
 
-module.exports = productsContainer;
+module.exports = Container;
